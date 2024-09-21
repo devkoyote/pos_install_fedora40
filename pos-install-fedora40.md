@@ -1,4 +1,4 @@
-Here’s a standardized version of your MD, organized and formatted for clarity:
+Here’s a standardized version, organized and formatted for clarity:
 
 ---
 
