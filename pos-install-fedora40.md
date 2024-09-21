@@ -1,95 +1,135 @@
-# UPDATE SYSTEM 
+Here’s a standardized version of your MD, organized and formatted for clarity:
+
+---
+
+# System Update and Installation Guide
+
+## Update System
+```bash
 $ sudo dnf upgrade --refresh
+```
 
-# RPM FUSION FREE
-sudo dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm
+## RPM Fusion Free
+```bash
+$ sudo dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm
+```
 
-# IMPORT KEY GPG
+### Import GPG Key
+```bash
 $ sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-40
+```
 
-# RPM NON FREE
+## RPM Non-Free
+```bash
 $ sudo dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm
+```
 
-# IMPORT KEY GPG
+### Import GPG Key
+```bash
 $ sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-40
+```
 
-# RPM TAINTED (FREE)
+## RPM Tainted (Free)
+```bash
 $ sudo dnf install rpmfusion-free-release-tainted
+```
 
-# RPM TAINTED NON-FREE
+## RPM Tainted Non-Free
+```bash
 $ sudo dnf install rpmfusion-nonfree-release-tainted
+```
 
-# ENABLE FLATHUB
+## Enable Flathub
+```bash
 $ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
 
-# INSTALL CODECS
+## Install Codecs
+```bash
 $ sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-
 $ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-
 $ sudo dnf groupupdate sound-and-video
-
 $ sudo dnf install amrnb amrwb faad2 flac gpac-libs lame libde265 libfc14audiodecoder mencoder x264 x265
+```
 
-# ACTIVATED HARDWARE GPU (OPTIONAL - AMD)
+## Activate Hardware GPU (Optional - AMD)
+```bash
 $ sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 $ sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+```
 
-# STEAM OR OTHERS (LIBRARIES I686 - AMD)
+## Install Libraries for Steam and Others (i686 - AMD)
+```bash
 $ sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
 $ sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
+```
 
-# INSTALL VLC
+## Install Applications
+### VLC
+```bash
 $ sudo dnf install vlc
-
-# INSTALL AUDACITY
+```
+### Audacity
+```bash
 $ sudo dnf install audacity
-
-# INSTALL KDENLIVE
+```
+### Kdenlive
+```bash
 $ sudo dnf install kdenlive
-
-# INSTALL OBS STUDIO
+```
+### OBS Studio
+```bash
 $ sudo dnf install obs-studio
-
-# INSTALL DISCORD
+```
+### Discord
+```bash
 $ sudo dnf install discord
-
-# INSTALL TELEGRAM_DESKTOP
+```
+### Telegram Desktop
+```bash
 $ sudo dnf install telegram-desktop
-
-# INSTALL GOOGLE_CHROME
+```
+### Google Chrome
+```bash
 $ sudo dnf install 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm'
+```
 
-# OPEN-JDK OTHER VERSIONS
+## OpenJDK Other Versions
+```bash
 $ sudo dnf install java-1.8.0-openjdk
 $ sudo dnf install java-11-openjdk
 $ sudo dnf install java-17-openjdk
 $ sudo dnf install java-20-openjdk
+```
 
-# INSTALL STEAM ( AMD )
+## Install Steam (AMD)
+```bash
 $ sudo dnf install mesa-dri-drivers.i686 mesa-libGL.i686 xorg-x11-drv-amdgpu
 $ sudo dnf install steam
+```
 
-# DECOMPRESSORS
+## Install Decompressors
+```bash
 $ sudo dnf install cabextract lzip p7zip p7zip-plugins unrar
+```
 
-# TEAMVIEWER
+## Install TeamViewer
+```bash
 $ sudo dnf install https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
+```
 
-# DOCKER
-
+## Install Docker
+```bash
 $ sudo dnf install dnf-plugins-core
-
 $ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-
 $ sudo dnf install docker-ce docker-ce-cli containerd.io
-
 $ sudo systemctl start docker
-
 $ sudo docker run hello-world
-
 $ sudo systemctl enable docker
-
-$ sudo groupadd docker && sudo gpasswd -a {$USER} docker && sudo systemctl restart docker
-
+$ sudo groupadd docker && sudo gpasswd -a $USER docker && sudo systemctl restart docker
 $ newgrp docker
+```
+
+---
+
+Feel free to adjust any sections or let me know if you need more modifications!
